@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+import Loading from '../components/common/Loading'
 
-/* const Routes = lazy(() => import("./Routes")); */
+const Routes = React.lazy(() => import('./Routes'))
 export default function App() {
-  const hola = () => {
-    return (<h1>Hola Mundo</h1>)
-  }
   return (
-    <div>
-      {hola()}
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Routes />
+    </Suspense>
   )
 }

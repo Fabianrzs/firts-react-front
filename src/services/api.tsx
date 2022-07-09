@@ -6,7 +6,7 @@ async function getRequestHeaders(): Promise<{}> {
     return {
       then: 'application/json'
     }
-  // eslint-disable-next-line no-unreachable
+    // eslint-disable-next-line no-unreachable
   } catch (error: any) {
     return error
   }
